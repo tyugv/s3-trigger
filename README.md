@@ -4,5 +4,5 @@ This repository contains the code for a Lambda function that preprocess new imag
 # Install dependencies
 pip install -r requirements.txt
 
-# Configuration:
+# Configuration
 You can modify zappa_settings.json to specify the S3 bucket, the region and other necessary parameters.
