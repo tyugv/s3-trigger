@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "aws_region": "<your aws region>",
+        "project_name": "zappa-s3",
+        "runtime": "python3.10",
+        "s3_bucket": "<s3 bucket for app>",
+        "keep_warm": false,
+        "events": [
+        {
+        "function": "app.preprocess",
+        "event_source": {
+          "arn": "<your S3 bucket arn>",
+          "key_filters": [
+            {
+              "type": "prefix",
+              "value": "raw_data/"
+            }
+          ],
+          "events": [
+            "s3:ObjectCreated:*"
+          ]
+        }
+        }
+        ]
+    }
+}
